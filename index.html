@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=UTF-8>
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<title>老司机开车稳！</title>
+	<style>
+		*{margin: 0; padding: 0;}
+		body{font-family:Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;font-size: 16px; color: #333;}
+		.ta-center{text-align: center;}
+		.container{overflow: hidden;}
+		footer{background: #333;}
+		header{background: #20a0ff;}
+		.git-hd h1{line-height: 200px; font-size: 50px; color: #fff;position: relative;}
+		.git-hd h1 span{ display: inline-block; height: 50px; line-height: 50px; transform:translateY(7px); -webkit-animation: stopCar 1.5s ease-out ;animation: stopCar 1.5s ease-out ;/*background-color: #ddd;*/}
+		.git-hd h1::before{content: ''; display: block; position: absolute; left:0; bottom: 0; width:100%; height:76px; background-color: #666;}
+		.git-hd h1::after{content: ''; display: block; position: absolute; left:44%; bottom: 76px; width:20px; height:124px; background-color: #666; box-shadow: 5px 0 5px 0 #333 inset;}
+		main{background: #f2f2f2;}
+		.git-bd{background: #fff; width: 1200px; margin: 0 auto; padding: 50px 30px;}
+		.git-bd .hd{line-height: 50px; padding: 0 15px; border-bottom: 2px solid #ccc;}
+		.git-bd .bd{line-height: 40px; min-height: 500px;}
+		.git-bd .bd p{border-bottom: 1px solid #eee;transform:translateX(200%);-webkit-animation: slider 1s 1s ease-out forwards; animation: slider 1s 1s ease-out forwards;}
+		.git-fd{padding: 50px 20px;}
+		.git-fd p{color:#fff;}
+
+		.slide{-webkit-animation: slider 1s 1s ease-out; animation: slider 1s 1s ease-out;}
+		
+		@keyframes slider {
+		0% {transform: translate3d(200%, 0, 0);}
+		100% {transform: translate3d(0, 0, 0);}
+		}
+
+		@-webkit-keyframes slider {
+		0% {-webkit-transform: translate3d(200%, 0, 0);}
+		100% {-webkit-transform: translate3d(0, 0, 0);}
+		}
+
+		@keyframes stopCar {
+		0% {transform-origin: 0 0; transform: translate3d(500%, 7px, 0) rotate(0); letter-spacing: 0;}
+		30% {transform-origin: 0 0; transform: translate3d(50%, 7px, 0) rotate(-2deg);letter-spacing: -3px;}
+		50% {transform-origin: 0 0; transform: translate3d(10%, 7px, 0) rotate(-8deg);letter-spacing: -7px;}
+		80% {transform-origin: 0 0; transform: translate3d(0, 7px, 0) rotate(-15deg);letter-spacing: -10px;}
+		85% {transform-origin: 0 0; transform: translate3d(-1%, 7px, 0) rotate(-16deg);letter-spacing: -8px;}
+		90% {transform-origin: 0 0; transform: translate3d(-2%, 7px, 0) rotate(-15deg);letter-spacing: -5px;}
+		93% {transform-origin: 0 0; transform: translate3d(0, 5px, 0) rotate(0);letter-spacing: 0;}
+		96% {transform-origin: 0 0; transform: translate3d(0, 7px, 0) rotate(0);letter-spacing: 0;}
+		99% {transform-origin: 0 0; transform: translate3d(0, 5px, 0) rotate(0);letter-spacing: 0;}
+		100% {transform-origin: 0 0; transform: translate3d(0, 7px, 0) rotate(0);letter-spacing: 0;}
+		}
+
+		@-webkit-keyframes stopCar {
+		0% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(500%, 7px, 0) rotate(0); letter-spacing: 0;}
+		30% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(50%, 7px, 0) rotate(-2deg);letter-spacing: -3px;}
+		50% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(10%, 7px, 0) rotate(-8deg);letter-spacing: -7px;}
+		80% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(0, 7px, 0) rotate(-15deg);letter-spacing: -10px;}
+		85% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(-1%, 7px, 0) rotate(-16deg);letter-spacing: -8px;}
+		90% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(-2%, 7px, 0) rotate(-15deg);letter-spacing: -5px;}
+		93% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(0, 13px, 0) rotate(0);letter-spacing: 0;}
+		96% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(0, 7px, 0) rotate(0);letter-spacing: 0;}
+		99% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(0, -13px, 0) rotate(0);letter-spacing: 0;}
+		100% {-webkit-transform-origin: 0 0; -webkit-transform: translate3d(0, 7px, 0) rotate(0);letter-spacing: 0;}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<section class="git-hd">
+				<h1 class="ta-center"><span>MR.F2E</span></h1>
+			</section>
+		</header>
+		<main>
+			<section class="git-bd">
+				<h2 class="ta-center hd">无证上路</h2>
+				<article class="bd">
+					<p>你竟然无证上路，你不怕被交警叔叔抓吗？</p>
+					<p>老铁，扎心了！</p>
+					<p>快上车，要开车了~</p>
+					<p>您悠着点来~</p>
+					<p>放心，稳！</p>
+				</article>
+			</section>
+		</main>
+		<footer>
+			<section class="git-fd">
+				<p class="ta-center">说实话我也不知道写什么上去好啊</p>
+			</section>
+		</footer>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var bd = this.querySelector('article.bd'),
+				p = bd.querySelectorAll('p');
+			p.forEach(function(item, idx) {
+				// var t = setTimeout(function() {
+					// clearTimeout(t);
+					// item.className = 'slide';
+					item.style.animationDelay = idx * 1 + 's';
+				// }, idx * 1000)
+			})
+		})
+	</script>
+</body>
+</html>
