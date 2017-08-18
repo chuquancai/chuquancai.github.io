@@ -2,7 +2,8 @@
 <html>
 <head>
 	<meta charset=UTF-8>
-	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>老司机开车稳！</title>
 	<style>
 		*{margin: 0; padding: 0;}
@@ -13,27 +14,31 @@
 		footer{background: #333;}
 		header{background: #20a0ff;}
 		.git-hd h1{line-height: 200px; font-size: 50px; color: #fff;position: relative;}
-		.git-hd h1 span{ display: inline-block; height: 50px; line-height: 50px; transform:translateY(7px); -webkit-animation: stopCar 1.5s ease-out ;animation: stopCar 1.5s ease-out ;/*background-color: #ddd;*/}
+		.git-hd h1 .name{ display: inline-block; height: 50px; line-height: 50px; transform:translateY(7px); -webkit-animation: stopCar 1.5s ease-out ;animation: stopCar 1.5s ease-out ;}
 		.git-hd h1::before{content: ''; display: block; position: absolute; left:0; bottom: 0; width:100%; height:76px; background-color: #666;}
-		.git-hd h1::after{content: ''; display: block; position: absolute; left:44%; bottom: 76px; width:20px; height:124px; background-color: #666; box-shadow: 5px 0 5px 0 #333 inset;}
+		.git-hd h1 .pillar{display: block; position: absolute; left:44%; bottom: 76px; width:20px; height:0; background-color: #666; box-shadow: 5px 0 5px 0 #333 inset;-webkit-transition: height 1.5s;transition: height 1.5s;}
 		main{display: -webkit-flex;display: flex; flex-direction: column;background: #f2f2f2;flex:1;}
-		.git-bd{flex:1;background: #fff; width: 1200px; margin: 0 auto; padding: 50px 30px;}
-		.git-bd .hd{line-height: 50px; padding: 0 15px; border-bottom: 2px solid #ccc;}
-		.git-bd .bd{line-height: 40px;}
-		.git-bd .bd p{border-bottom: 1px solid #eee;transform:translateX(200%);-webkit-animation: slider 1s 1s ease-out forwards; animation: slider 1s 1s ease-out forwards;}
+		.git-bd{flex:1;background: #fff; width: 1200px; margin: 0 auto; padding: 50px 0;}
+		.git-bd .hd{line-height: 50px; margin: 0 30px; border-bottom: 2px solid #ccc;}
+		.git-bd .bd{line-height: 40px; padding:0 30px;}
+		.git-bd .bd p{border-bottom: 1px solid #eee;text-indent: 1500px; -webkit-animation: slider 1s 1s ease-out forwards; animation: slider 1s 1s ease-out forwards;height: 40px; overflow: hidden;}
 		.git-fd{padding: 50px 20px;}
 		.git-fd p{color:#fff;}
 
 		.slide{-webkit-animation: slider 1s 1s ease-out; animation: slider 1s 1s ease-out;}
+
+		@media screen and (max-width: 1200px) {
+			.git-bd{width: 100%;}
+		}
 		
 		@keyframes slider {
-		0% {transform: translate3d(200%, 0, 0);}
-		100% {transform: translate3d(0, 0, 0);}
+		0% {text-indent: 1500px;}
+		100% {text-indent: 0;}
 		}
 
 		@-webkit-keyframes slider {
-		0% {-webkit-transform: translate3d(200%, 0, 0);}
-		100% {-webkit-transform: translate3d(0, 0, 0);}
+		0% {text-indent: 1500px;}
+		100% {text-indent: 0;}
 		}
 
 		@keyframes stopCar {
@@ -68,12 +73,12 @@
 	<div class="container">
 		<header>
 			<section class="git-hd">
-				<h1 class="ta-center"><span>MR.F2E</span></h1>
+				<h1 class="ta-center"><span class="name">MR.F2E</span><span class="pillar"></span></h1>
 			</section>
 		</header>
 		<main>
 			<section class="git-bd">
-				<h2 class="ta-center hd">无证上路</h2>
+				<h2 class="ta-center hd">差点翻车</h2>
 				<article class="bd">
 					<p>你竟然无证上路，你不怕被交警叔叔抓吗？</p>
 					<p>老铁，扎心了！</p>
@@ -90,16 +95,26 @@
 		</footer>
 	</div>
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			var bd = this.querySelector('article.bd'),
+		function setDelay () {
+			var bd = document.querySelector('article.bd'),
 				p = bd.querySelectorAll('p');
 			p.forEach(function(item, idx) {
-				// var t = setTimeout(function() {
-					// clearTimeout(t);
-					// item.className = 'slide';
 					item.style.animationDelay = idx * 1 + 's';
-				// }, idx * 1000)
-			})
+			});
+		}
+
+		function setPos () {
+			var hd = document.querySelector('.git-hd'),
+			hdWidth = hd.clientWidth,
+			word = hd.querySelector('span.name'),
+			left = word.offsetLeft,
+			pillar = hd.querySelector('span.pillar');
+			pillar.style.left = left - pillar.clientWidth + 'px';
+			pillar.style.height = '124px';
+		}
+		document.addEventListener('DOMContentLoaded', function() {
+			setDelay()
+			setPos()
 		})
 	</script>
 </body>
